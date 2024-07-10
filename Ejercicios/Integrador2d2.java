@@ -16,10 +16,10 @@ public class Integrador2d2 {
         int mayus = 0;
         for (int i = 0; i < contraseña.length(); i++) {
             char c = contraseña.charAt(i);
-            if (contraseña.charAt(i) == Contra.charAt(i)) {
+            if (Character.isUpperCase(c)) {
                 mayus++;
             }
-            if (contraseña.charAt(i) == contra.charAt(i)) {
+            if (Character.isLowerCase(c)) {
                 minus++;
             }
             if (Character.isDigit(c)){
