@@ -71,11 +71,20 @@ public class Integrador4 {
         System.out.println("Ingresa cantidad de * por lado: ");
         int lado = t.nextInt();
 
-        for (i = 0; i < lado; i++) {
+        for (int y = 0; y < lado; y++) {
             System.out.print("* ");
         }
         System.out.println();
-        for (i = 0; i < lado; i++) {
+        for (int x = 0; x < lado - 2; x++) {
+            System.out.print("* ");
+            for (int z = 0; z < lado - 2; z++) {
+                System.out.print("  ");
+            }
+            System.out.println("* ");
+
+
+        }
+        for (int u = 0; u < lado; u++) {
             System.out.print("* ");
         }
 
