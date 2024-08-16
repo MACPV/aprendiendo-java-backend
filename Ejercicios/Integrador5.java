@@ -33,7 +33,7 @@ public class Integrador5 {
                         System.out.println(oracion);
                         break;
                     case 2:
-                        System.out.println("Borrar oracion: ");
+                        System.out.println("Borrar oracion: "); 
                         oracion = "";
                         System.out.println(oracion);
                         break;
