@@ -10,13 +10,14 @@ public class Rectangulo {
     private int alto;
     static private int contadorRectangulo = 0;
     static Scanner t = new Scanner(System.in);
+
     static ArrayList<Rectangulo> rectangulos = new ArrayList<>();
 
     public static void main(String[] args) {
         int opcion;
         do {
             opcion = menu();
-        }while (opcion != 4);
+        } while (opcion != 4);
     }
 
     public static int menu() {
@@ -27,24 +28,28 @@ public class Rectangulo {
         System.out.println("4- Salir");
         return numero();
     }
-    public static void realizaOpcion( int opcion){
-        switch (opcion){
+
+    public static void realizaOpcion(int opcion) {
+        switch (opcion) {
             case 1:
         }
     }
-    public static void creaRectangulo(){
-        System.out.println("Ingresa el alto del rectangulo: ");
-        int alto = numero();
-        System.out.println();
+
+    public static void creaRectangulo(int alto, int ancho) {
+
+        rectangulos.add(new Rectangulo(alto, ancho));
+
+        contadorRectangulo++;
 
     }
+
     public static int numero() {
         int n;
         System.out.println("Ingresa un numero :");
         while (true) {
             try {
                 n = t.nextInt();
-                if (n < 0 ) {
+                if (n < 0) {
                     System.out.println("Por favor, ingresa una opcion valida:");
                 } else {
                     return n;
@@ -59,11 +64,14 @@ public class Rectangulo {
     public Rectangulo(int alto, int ancho) {
         this.alto = alto;
         this.ancho = ancho;
-        contadorRectangulo++;
     }
 
-    public int area() {
-        return alto * ancho;
+    public Rectangulo() {
+
+    }
+
+    public int area(int rectangulo[]) {
+        return rectangulo[0] * rectangulo[1];
     }
 
     public void imprimirArea(int area) {
