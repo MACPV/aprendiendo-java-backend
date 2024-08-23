@@ -7,24 +7,15 @@ public class If2 {
 
         Scanner t = new Scanner(System.in);
 
-        System.out.println("Ingresa un numero del 1 al 100: ");
-        int num = t.nextInt();
-
-        if (num >= 1 && num <= 100) {
-
-            if (num >= 90 && num <= 100) {
-                System.out.println("Clasifición:  A");
-            } else if (num >= 80 && num <= 89) {
-                System.out.println("Clasificación:  B");
-            } else if (num >= 70 && num <= 79) {
-                System.out.println("Clasificación:  C");
-            } else if (num >= 60 && num <= 69) {
-                System.out.println("Clasificación:  D");
-            } else {
-                System.out.println("Clasificación:  F");
-            }
-        } else {
-            System.out.println("Numero no valido");
-        }
+        double prestamo = 1680;
+        double imensual = 0.0283;
+        double meses = 18;
+        double pagototal;
+        double cuota = (prestamo * (imensual * Math.pow((1 + imensual), meses))) / (Math.pow((1 + imensual), meses) - 1);
+        System.out.println(cuota);
+        double cuota2 = (prestamo * imensual * (Math.pow((1 + imensual), meses)) / ((Math.pow((1 + imensual), meses) - 1)));
+        System.out.println(cuota2);
+        pagototal = cuota2 * meses;
+        System.out.println(pagototal);
     }
 }
