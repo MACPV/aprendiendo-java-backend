@@ -51,18 +51,105 @@ public class MenuJE {
                     eliminarEquipo(equipos);
                     break;
                 case 8:
-                    System.out.println("8- Seleccionar Jugador");
+                    seleccionarJugador();
                     break;
                 case 9:
-                    System.out.println("9- Seleccionar Equipo");
+                    seleccionarEquipo();
                     break;
                 case 10:
                     System.out.println("Saliste del programa");
                     break;
+                default:
+                    System.out.println("Opción inválida");
             }
         } while (op != 10);
 
 
+    }
+
+    public static void seleccionarJugador() {
+        System.out.println("8- Seleccionar Jugador");
+        mostrarJugadores(jugadores);
+        System.out.println("Seleccione el número del jugador:");
+        int opj = numero() - 1;
+        if (opj >= 0 && opj < jugadores.size()) {
+            Jugador jugadorSeleccionado = jugadores.get(opj);
+            menuJugador(jugadorSeleccionado);
+        } else {
+            System.out.println("Selección inválida.");
+        }
+    }
+
+    public static void menuJugador(Jugador jugador) {
+        int op;
+        do {
+            System.out.println("\nMenú de Jugador: " + jugador.getNombre());
+            System.out.println("1- Ver detalles");
+            System.out.println("2- Cambiar nombre");
+            System.out.println("3- Cambiar equipo");
+            System.out.println("4- Regresar al menú principal");
+            op = numero();
+            switch (op) {
+                case 1:
+                    System.out.println(jugador);
+                    break;
+                case 2:
+                    System.out.println("Ingrese el nuevo nombre:");
+                    jugador.setNombre(t.next());
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    System.out.println("Regresando al menú principal");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        } while (op != 4);
+    }
+
+    public static void seleccionarEquipo() {
+        System.out.println("9- Seleccionar Equipo");
+        mostrarEquipo(equipos);
+        System.out.println("Seleccione el número del equipo:");
+        int op = numero() - 1;
+        if (op >= 0 && op < equipos.size()) {
+            Equipo equipoSeleccionado = equipos.get(op);
+            menuEquipo(equipoSeleccionado);
+        } else {
+            System.out.println("Selección inválida.");
+        }
+    }
+
+    public static void menuEquipo(Equipo equipo) {
+        int op;
+        do {
+            System.out.println("\nMenú de Equipo: " + equipo.getNombre());
+            System.out.println("1- Ver detalles");
+            System.out.println("2- Cambiar nombre");
+            System.out.println("3- Agregar jugador al equipo");
+            System.out.println("4- Mostrar jugadores del equipo");
+            System.out.println("5- Regresar al menú principal");
+            op = numero();
+            switch (op) {
+                case 1:
+                    System.out.println(equipo);
+                    break;
+                case 2:
+                    System.out.println("Ingrese el nuevo nombre:");
+                    equipo.setNombre(t.next());
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    System.out.println("Regresando al menú principal");
+                    break;
+                default:
+                    System.out.println("Opción inválida");
+            }
+        } while (op != 5);
     }
 
     public static void crearJugador() {
@@ -122,7 +209,7 @@ public class MenuJE {
 
     }
 
-    public static void eliminarEquipo(ArrayList<Equipo> equipos){
+    public static void eliminarEquipo(ArrayList<Equipo> equipos) {
         System.out.println("7- Eliminar Equipo");
         mostrarEquipo(equipos);
         int el = numero() - 1;
